@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <ul>
+        <li>
+            <span><a class="notLink" href="#!">Ссылка</a></span>
+            <span>Описание</span>
+            <span class="code nocopy" title="Скопировать">Установка через терминал</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/" target="blank">npm</a>
+            <span>Установка пакетного менеджера npm в Вашу папку (директорию )</span>
+            <span class="code" title="Скопировать">npm init</span>
+        </li>
+        <li>
+            <a href="https://gulpjs.com/" target="blank">gulp-cli </a> -
+            <span>Установка gulp-cli глобально на все проекты </span>
+            <span class="code" title="Скопировать">npm install gulp-cli -g</span>
+        </li>
+        <li>
+            <a href="https://gulpjs.com/" target="blank">gulp </a> -
+            <span>Установка gulp </span>
+            <span class="code" title="Скопировать">npm install gulp -D</span>
+        </li>
+        <li>
+            <a href="https://gulpjs.com/" target="blank">gulpfile.js</a> -
+            <span>Установка файла для работы с gulp</span>
+            <span class="code" title="Скопировать">npx -p touch nodetouch gulpfile.js</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-autoprefixer" target="blank">gulp-autoprefixer</a> -
+            <span>Добавляет приписки к свойсвам в css для поддержки их во всех браузерах</span>
+            <span class="code" title="Скопировать">npm install --save-dev gulp-autoprefixer</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-babel" target="blank">@babel/core</a> - <span> Ядро плагина babel для работы всех его доп модулей</span>
+            <span class="code" title="Скопировать">npm install --save-dev @babel/core
+                </span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-babel" target="blank">gulp-babel</a> - <span>Нужен для работы babel в task менеджере gulp</span>
+            <span class="code" title="Скопировать">npm install --save-dev gulp-babel</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-babel" target="blank">@babel/preset-env</a> - <span>Создает из новой версии js более страрую для работы в старых браузерах</span>
+            <span class="code" title="Скопировать">npm install --save-dev @babel/preset-env</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/babel-preset-minify" target="blank">babel-preset-minify</a> - <span>
+                Создает минифицированную версию JavaScript`а</span>
+            <span class="code" title="Скопировать">npm install babel-preset-minify --save-dev</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-group-css-media-queries"
+                target="blank">gulp-group-css-media-queries</a>
+            - <span> Обрабатывает все медиа запросы и помещает их в конец CSS для правельной работы</span>
+            <span class="code" title="Скопировать">npm install --save-dev gulp-group-css-media-queries</span>
+        </li>
+        <li>
+            <a href="https://browsersync.io/docs/gulp" target="blank">browser-sync</a>- <span>Проверяет файлы
+                на изменения и делает запуск сервера</span>
+            <span class="code" title="Скопировать">npm install browser-sync gulp --save-dev</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-sourcemaps" target="blank">gulp-sourcemaps</a>- <span>В браузере
+                дает возможность просмотреть файл SCSS</span>
+            <span class="code" title="Скопировать">npm i gulp-sourcemaps --save-dev</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-sass" target="blank">gulp-sass</a>- <span> Нужен для работы с
+                технологией <a href="https://sass-lang.com/" target="blank">SCSS</a></span>
+            <span class="code" title="Скопировать">npm install node-sass gulp-sass --save-dev</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-include" target="blank">gulp-include</a>- <span> Нужен для работы с
+                подключениями файлов </span>
+            <span class="code" title="Скопировать">npm install gulp-include</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-load-plugins" target="blank"> gulp-load-plugins</a>- <span> Запускае все плагины GULP </span>
+            <span class="code" title="Скопировать">npm install --save-dev gulp-load-plugins</span>
+        </li>
+        <li>
+            <a href="https://www.npmjs.com/package/gulp-load-plugins" target="blank"> gulp-rename</a>- <span> Переименовывает файлы </span>
+            <span class="code" title="Скопировать">npm install gulp-rename</span>
+        </li>
+    </ul>
+
+
+    <script>             
+        
+        const copy = [...document.querySelectorAll('.code:not(.nocopy)')]
+        copy.forEach(key => {
+            key.addEventListener('click', function () {
+                key.classList.add('active')
+                navigator.clipboard.writeText(this.innerText).then(() => {
+                    + navigator.clipboard.readText().then((response) => {
+                        alert('Скопировано ' + response);
+                    })
+                }).catch(() => {
+                    alert('Ошибка')
+                })
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>
