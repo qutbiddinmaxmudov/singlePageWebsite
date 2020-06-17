@@ -7,7 +7,7 @@ global.$ = {
         serverDir:  './app/build',  
         src:{
             html:   './app/src/*.html',
-            css:    './app/src/styles/*.*',
+            css:    './app/src/styles/main.scss',
             js:     './app/src/scripts/*.js',
             img:    './app/src/images/*.{png,jpg,jfif,jpeg,webp}',
             fonts:  './app/src/fonts/**/*.*'
@@ -21,7 +21,7 @@ global.$ = {
         },
         watch:{
             html:   ['./app/src/*.html','./app/src/views/*.html'],
-            css:    './app/src/styles/**/*.*',
+            css:    './app/src/styles/main.scss',
             js:     './app/src/scripts/*.*',
             img:    './app/src/images/**/*.*',
             fonts:  './app/src/fonts/**/*.*',
