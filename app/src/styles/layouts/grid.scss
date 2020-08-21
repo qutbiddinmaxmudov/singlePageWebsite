@@ -1,0 +1,133 @@
+$black:#313030;
+$red:#ff3f40;
+$white:#f6f2f2;
+$bootstrapSizes:(1400:1320, 1200:1140, 992:960, 768:720, 576:540, 0:0);
+
+@mixin grid($sizes) {
+
+    @each $breakPoints,
+    $containerSizes in $sizes {
+        $gridSize: 0;
+
+        @if $breakPoints==1400 {
+            $gridSize: xxl;
+        }
+
+        @else if $breakPoints==1200 {
+            $gridSize: xl;
+        }
+
+        @else if $breakPoints==992 {
+            $gridSize: lg;
+        }
+
+        @else if $breakPoints==768 {
+            $gridSize: md;
+        }
+
+        @else if $breakPoints==576 {
+            $gridSize: sm;
+        }
+
+
+        @if $breakPoints>0 {
+
+            @media(min-width:#{$breakPoints}px) {
+                .container {
+                    max-width: #{$containerSizes}px;
+                }
+                .justify-content-#{$gridSize}-center{
+                    justify-content: center;
+                }
+                .justify-content-#{$gridSize}-between{
+                    justify-content: space-between;
+                }
+                .align-items-#{$gridSize}-center{
+                    align-items: center;
+                }
+                .text-#{$gridSize}-center{
+                    text-align: center;
+                }
+                .text-#{$gridSize}-left{
+                    text-align: left;
+                }
+                .d-#{$gridSize}-flex{
+                    display: flex;
+                }
+                .d-#{$gridSize}-block{
+                    display: block;
+                }
+                .m-#{gridSize}-auto{
+                    margin: auto;
+                }
+            }
+
+            @for $i from 1 through 12 {
+                @media (min-width: #{$breakPoints}px) {
+                    .col-#{$gridSize}-#{$i} {
+                        width: calc(100%/12*#{$i});
+                        padding: 0 15px;
+                    }
+                }
+            }
+        }
+
+        @else {
+            @for $i from 1 through 12 {
+                .col-#{$i} {
+                    width: calc(100%/12*#{$i});
+                    padding: 0 15px;
+                }
+            }
+
+            .container {
+                max-width: 100%;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .justify-content-center{
+                justify-content: center;
+            }
+            .justify-content-between{
+                justify-content: space-between;
+            }
+            .align-items-center{
+                align-items: center;
+            }
+            .text-center{
+                text-align: center;
+            }
+            .text-left{
+                text-align: left;
+            }
+            .d-flex{
+                display: flex;
+            }
+            .d-block{
+                display: block;
+            }
+            .m-auto{
+                margin: auto;
+            }
+        }
+    }
+}
+
+.row{
+    margin-right: -15px;
+    margin-left: -15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.h-100{
+    height: 100%;
+}
+.w-100{
+    width: 100%;
+}
+
+
+@include grid($bootstrapSizes)
