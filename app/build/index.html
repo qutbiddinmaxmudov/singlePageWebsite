@@ -14,9 +14,9 @@
             <p class="header__nav-help">Open the navigation</p>
             <ul class="header__list hide">
                 <li><a class="header__link active" href="#">home</a></li>
-                <li><a class="header__link" href="#">portfolio</a></li>
-                <li><a class="header__link" href="#">about us</a></li>
-                <li><a class="header__link" href="#">contact</a></li>
+                <li><a class="header__link" href="#products">portfolio</a></li>
+                <li><a class="header__link" href="#team">about us</a></li>
+                <li><a class="header__link" href="#get">contact</a></li>
             </ul>
             <a href="#" class="header__nav-btn down">
                 &leftarrow;
@@ -96,38 +96,38 @@
                 <div class="line m-auto"></div>
 
                 <ul class="products__list d-flex col-9">
-                    <li><a href="#" class="products__link active">all</a></li>
-                    <li><a href="#" class="products__link">print template</a></li>
-                    <li><a href="#" class="products__link">web template</a></li>
-                    <li><a href="#" class="products__link">user interface</a></li>
-                    <li><a href="#" class="products__link">mock-up</a></li>
+                    <li><a href="#" data-class="all" class="products__link active">all</a></li>
+                    <li><a href="#" data-class="print" class="products__link">print template</a></li>
+                    <li><a href="#" data-class="web" class="products__link">web template</a></li>
+                    <li><a href="#" data-class="user" class="products__link">user interface</a></li>
+                    <li><a href="#" data-class="mock" class="products__link">mock-up</a></li>
                 </ul>
                 <div class="products__elements">
-                    <div class="products__item">
+                    <div class="products__item" data-class="mock">
                         <img src="images/template1.jpg" class="products__img" alt="template">
                     </div>
-                    <div class="products__item">
+                    <div class="products__item" data-class="mock">
                         <img src="images/template2.jpg" class="products__img" alt="template">
                     </div>
-                    <div class="products__item">
+                    <div class="products__item" data-class="web">
                         <img src="images/template3.jpg" class="products__img" alt="template">
                     </div>
-                    <div class="products__item">
+                    <div class="products__item" data-class="web">
                         <img src="images/template4.jpg" class="products__img" alt="template">
                     </div>
-                    <div class="products__item">
+                    <div class="products__item" data-class="web">
                         <img src="images/template5.jpg" class="products__img" alt="template">
                     </div>
-                    <div class="products__item">
+                    <div class="products__item" data-class="print">
                         <img src="images/template6.jpg" class="products__img" alt="template">
                     </div>
-                    <div class="products__item">
+                    <div class="products__item" data-class="print">
                         <img src="images/template7.jpg" class="products__img" alt="template">
                     </div>
-                    <div class="products__item">
+                    <div class="products__item" data-class="user">
                         <img src="images/template8.jpg" class="products__img" alt="template">
                     </div>
-                    <div class="products__item">
+                    <div class="products__item" data-class="user">
                         <img src="images/template9.jpg" class="products__img" alt="template">
                     </div>
                 </div>
@@ -137,18 +137,20 @@
             <div class="container">
                 <h2 class="section-title">Meet our team</h2>
                 <p class="team__text col-4">
-                    Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed dooing eiusmod tempor incididut labore Ui / Ux , print template.
+                    Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed dooing eiusmod tempor incididut labore
+                    Ui / Ux , print template.
                 </p>
                 <div class="line"></div>
 
                 <div class="team__workers row">
                     <div class="col-3">
-                            <img src="images/worker1.jpg" alt="worker" class="team__workers-big">
+                        <img src="images/worker1.jpg" alt="worker" class="team__workers-big">
                     </div>
                     <div class="col-8">
                         <h3 class="team__workers-name">Elice Madison</h3>
                         <p class="team__workers-info">
-                            Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed dooing eiusmod tempor incididut labore Ui / Ux , print template.
+                            Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed dooing eiusmod tempor
+                            incididut labore Ui / Ux , print template.
                         </p>
                         <ul class="team__workers-list">
                             <li><a href="#" class="team__workers-link">Facebook</a></li>
@@ -206,12 +208,14 @@
                     get in touch
                 </h2>
                 <p class="get__text">
-                    Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore et.ur adipis cing elit, sed do eiusmod tempor incididunt ut labore et. ur adipis cing elit, sed do eiusmod tempor incididunt ut labore et.
+                    Lorem ipsum dolor sit amet, consectetur adipis cing elit, sed do eiusmod tempor incididunt ut labore
+                    et.ur adipis cing elit, sed do eiusmod tempor incididunt ut labore et. ur adipis cing elit, sed do
+                    eiusmod tempor incididunt ut labore et.
                 </p>
                 <div class="line"></div>
-                
-                <div class="row">
-                    <form class="col-7 get__form">
+
+                <div class="row get__form justify-content-between">
+                    <form class="col-7 ">
                         <div class="get__inputs">
                             <input class="get__input" type="text" name="name" placeholder="name">
                             <input class="get__input" type="email" name="email" placeholder="your mail">
@@ -220,16 +224,27 @@
                         <button type="submit" class="get__btn">send message</button>
                     </form>
                     <div class="get__info col-4">
-                        <h4 class="get__info-title"></h4>
-                        <a href="https://goo.gl/maps/EH4hrqUMAUWmbSfr6">Lorem ipsum dolor sit.</a>
-                        <a href=""></a>
-                        <a href=""></a>
+                        <h4 class="get__info-title">contact info</h4>
+                        <a class="get__info-link" href="https://goo.gl/maps/EH4hrqUMAUWmbSfr6">Jalalabad 24 / A,
+                            Ambaarkhana, Sylhet, Bangladesh</a>
+                        <a class="get__info-link" href="mailto:redwan@deviserweb.com">redwan@deviserweb.com</a>
+                        <a class="get__info-link" href="+8801761746373">(+88) 017 617 46373</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+        <div class="container d-flex justify-content-between align-items-center">
+            <p class="footer__text">© Copyright @Junaed 2016, All rights reserved.</p>
+            <ul class="footer__list d-flex">
+                <li><a href="#" class="footer__link footer__link-twitter"></a></li>
+                <li><a href="#" class="footer__link footer__link-linkedin"></a></li>
+                <li><a href="#" class="footer__link footer__link-googleplus"></a></li>
+                <li><a href="#" class="footer__link footer__link-facebook"></a></li>
+            </ul>
+        </div>
+    </footer>
     <script src="scripts/common.min.js"></script>
 </body>
 

@@ -71,7 +71,6 @@ ul {
     }
 
     &__link {
-        display: block;
         height: 100%;
         padding-left: 25px;
         padding-right: 25px;
@@ -82,6 +81,7 @@ ul {
         display: flex;
         align-items: center;
         justify-content: center;
+        transition: .2s;
     }
 
     &__link.active {
@@ -122,6 +122,7 @@ ul {
     &__video {
         width: 100%;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.35);
+        transition: 0.5s;
     }
 }
 
@@ -210,6 +211,7 @@ ul {
         font-weight: 600;
         font-size: 22px;
         text-transform: uppercase;
+        transition: 0.5s;
 
         &.active {
             color: $red;
@@ -220,9 +222,10 @@ ul {
     &__elements {
         width: 100%;
         display: grid;
-        grid-template-rows: repeat(3, 300px);
+        grid-auto-rows: 300px;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 30px;
+        transition: 1s;
     }
 
     &__item {
@@ -309,9 +312,10 @@ ul {
             height: 100%;
             width: 100%;
             object-fit: cover;
-            
+
         }
-        &-name{
+
+        &-name {
             position: absolute;
             bottom: 0;
             width: 100%;
@@ -328,42 +332,45 @@ ul {
             opacity: 0;
             transition: 1s;
         }
-        &:hover .team__worker-name{
+
+        &:hover .team__worker-name {
             opacity: 1;
         }
     }
 }
-.subscribe{
+
+.subscribe {
     margin-top: 110px;
     padding-top: 140px;
     padding-bottom: 140px;
     position: relative;
     backdrop-filter: grayscale(50) blur(3px);
 
-    &__bg{
+    &__bg {
         background: url(../images/subscribe_bg.jpg) center/cover no-repeat;
         background-attachment: fixed;
     }
 
-    &__title{
+    &__title {
         color: white;
         font-weight: bold;
         font-size: 42px;
         margin-bottom: 41px;
         text-align: center;
     }
-    &__description{
+
+    &__description {
         color: white;
         text-align: center;
         margin-bottom: 50px;
     }
 
-    &__form{
+    &__form {
         display: flex;
         justify-content: center;
     }
 
-    &__input{
+    &__input {
         padding-top: 30px;
         padding-bottom: 30px;
         padding-right: 35px;
@@ -375,13 +382,14 @@ ul {
         max-width: 520px;
         border-radius: 4px;
 
-        &::placeholder{
+        &::placeholder {
             color: #2c2c2c;
             font-size: 16px;
 
         }
     }
-    &__btn{
+
+    &__btn {
         font-weight: bold;
         color: white;
         font-size: 18px;
@@ -398,11 +406,12 @@ ul {
         cursor: pointer;
     }
 }
-.get{
+
+.get {
     padding-top: 100px;
     padding-bottom: 100px;
-    
-    &__text{
+
+    &__text {
         color: black;
         line-height: 28px;
         font-size: 16px;
@@ -410,24 +419,26 @@ ul {
         margin-bottom: 50px;
         opacity: 0.7;
     }
-    
-    &__form{
+
+    &__form {
         margin-top: 80px;
     }
-    &__inputs{
+
+    &__inputs {
         display: flex;
         justify-content: space-between;
         margin-bottom: 50px;
     }
-    &__input{
+
+    &__input {
         width: 45%;
         background: #e5e5e5;
         padding: 30px 50px;
         border-radius: 10px;
         color: black;
         border: none;
-        
-        &::placeholder{
+
+        &::placeholder {
             color: black;
             letter-spacing: 2px;
             font-size: 18px;
@@ -435,7 +446,8 @@ ul {
             text-transform: capitalize;
         }
     }
-    &__textarea{
+
+    &__textarea {
         width: 100%;
         padding: 30px 50px;
         border-radius: 10px;
@@ -445,8 +457,8 @@ ul {
         color: black;
         font-family: 'Open-Sans';
         border: none;
-        
-        &::placeholder{
+
+        &::placeholder {
             color: black;
             letter-spacing: 2px;
             font-size: 18px;
@@ -454,8 +466,8 @@ ul {
             text-transform: capitalize;
         }
     }
-    
-    &__btn{
+
+    &__btn {
         background: #ff3b3b;
         font-weight: bold;
         font-size: 18px;
@@ -468,12 +480,81 @@ ul {
         margin-top: 45px;
         border-radius: 10px;
     }
+
+    &__info {
+        padding-left: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        &::before {
+            content: " ";
+            width: 50vw;
+            height: 100%;
+            position: absolute;
+            left: 0%;
+            top: 0;
+            background: #2d2d2d;
+        }
+
+        &-title {
+            text-transform: uppercase;
+            font-weight: bold;
+            color: white;
+            font-style: 18px;
+            margin-bottom: 40px;
+            opacity: .8;
+        }
+
+        &-link {
+            color: white;
+            margin-bottom: 30px;
+            opacity: .8;
+            line-height: 28px;
+        }
+    }
+}
+
+.footer{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background: #313030;    
     
-    &__info{
-        background: #2d2d2d;
+    &__text{
+        color: #b8b8b8;
     }
     
-    
+    &__link{
+        height: 33px;
+        width: 33px;
+        border-radius: 100%;
+        background: #ebebeb;
+        color: #313030;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 20px;
+        position: relative;
+        font-size: 20px;
+        
+        &-twitter::before{
+            font-family: 'Font-Awesome';
+            content: '\f099';
+        }
+        &-facebook::before{
+            font-family: 'Font-Awesome';
+            content: '\f39e';
+        }
+        &-linkedin::before{
+            font-family: 'Font-Awesome';
+            content: '\f0e1';
+        }
+        &-googleplus::before{
+            font-family: 'Font-Awesome';
+            content: '\f0d5';
+        }
+    }
 }
 
 
