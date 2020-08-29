@@ -57,9 +57,39 @@ productsLinks.forEach(item => item.onclick = function (e) {
                 }
             })
         }, 1000);
-        
+
         setTimeout(() => {
             productsElements.style.opacity = '1'
+        }, 1000);
+    }
+})
+
+//Team navigation
+
+const workersBigImage = document.querySelector('.team__workers-big'),
+    workersBigName = document.querySelector('.team__workers-name'),
+    teamWorkers = [...document.querySelectorAll('.team__worker')]
+let teamIndicator = 1;
+teamWorkers.forEach(worker => worker.onclick = () => {
+    if (teamIndicator) {
+        teamIndicator = 0;
+        workersBigImage.style.opacity = '0'
+        workersBigName.style.opacity = '0'
+        worker.style.opacity = '0'
+        worker.style.transition = '1s'
+        const name = worker.querySelector('.team__worker-name').innerHTML,
+            img = worker.querySelector('.team__worker-image').getAttribute('src')
+        setTimeout(() => {
+            worker.querySelector('.team__worker-name').innerHTML = workersBigName.innerHTML
+            worker.querySelector('.team__worker-image').setAttribute('src', workersBigImage.getAttribute('src'))
+            workersBigImage.setAttribute('src', img)
+            workersBigName.innerHTML = name
+        }, 1000);
+        setTimeout(() => {
+            workersBigImage.style.opacity = '1'
+            workersBigName.style.opacity = '1'
+            worker.style.opacity = '1'
+            teamIndicator = 1;
         }, 1000);
     }
 })

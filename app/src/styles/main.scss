@@ -11,6 +11,8 @@ html,
 body {
     scroll-behavior: smooth;
     font-family: 'Open-Sans';
+    position: relative;
+    overflow-x: hidden;
 }
 
 a {
@@ -264,6 +266,7 @@ ul {
             height: 100%;
             object-position: center;
             object-fit: cover;
+            transition: 1s;
         }
 
         &-name {
@@ -273,6 +276,7 @@ ul {
             opacity: .8;
             margin-bottom: 35px;
             text-transform: uppercase;
+            transition: 1s;
         }
 
         &-info {
@@ -307,12 +311,13 @@ ul {
         position: relative;
         height: 225px;
         width: 23%;
-
+        cursor: pointer;
+        
         &-image {
             height: 100%;
             width: 100%;
             object-fit: cover;
-
+            transition: 1s;
         }
 
         &-name {
