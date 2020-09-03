@@ -542,22 +542,33 @@ ul {
         margin-left: 20px;
         position: relative;
         font-size: 20px;
+        filter: grayscale(100%);
+        transition: 0.5s;
+        
+        &:hover{
+            background: #000;
+            filter: none;
+        }
         
         &-twitter::before{
             font-family: 'Font-Awesome';
             content: '\f099';
+            color: blue;
         }
         &-facebook::before{
             font-family: 'Font-Awesome';
             content: '\f39e';
+            color: blue;
         }
         &-linkedin::before{
             font-family: 'Font-Awesome';
             content: '\f0e1';
+            color: blue;
         }
         &-googleplus::before{
             font-family: 'Font-Awesome';
             content: '\f0d5';
+            color: red;
         }
     }
 }
